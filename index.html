@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EasyBuy - Buy & Sell</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>EasyBuy</h1>
+    <p>Buy and Sell Used Products</p>
+</header>
+
+<nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('buy')">Buy Products</button>
+    <button onclick="showPage('sell')">Sell Products</button>
+</nav>
+
+<!-- HOME PAGE -->
+
+<section id="home" class="page">
+    <h2>Welcome to EasyBuy</h2>
+    <p>Buy and Sell Your Used Products Easily!</p>
+
+    <div class="home-buttons">
+        <button onclick="showPage('buy')">BUY PRODUCTS</button>
+        <button onclick="showPage('sell')">SELL PRODUCTS</button>
+    </div>
+
+    <img class="banner"
+    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1000">
+</section>
+
+<!-- BUY PAGE -->
+
+<section id="buy" class="page" style="display:none">
+
+    <h2>Available Products</h2>
+
+    <input type="text" id="searchBox"
+    placeholder="Search products..." onkeyup="displayProducts()">
+
+    <div class="container" id="productList"></div>
+
+    <div class="form-box" id="paymentSection"
+    style="display:none">
+
+        <h2>Payment Details</h2>
+
+        <h3 id="selectedProduct"></h3>
+        <h3 id="selectedPrice"></h3>
+
+        <input type="text" id="buyerName"
+        placeholder="Enter Your Name">
+
+        <input type="tel" id="buyerPhone"
+        placeholder="Phone Number">
+
+        <textarea id="buyerAddress"
+        placeholder="Delivery Address"></textarea>
+
+        <select id="paymentMethod">
+            <option value="">Select Payment Method</option>
+            <option value="Cash on Delivery">Cash on Delivery</option>
+            <option value="UPI Demo">UPI Demo</option>
+            <option value="Card Demo">Card Demo</option>
+        </select>
+
+        <br><br>
+
+        <button onclick="placeOrder()">Place Order</button>
+        <button onclick="closePayment()">Cancel</button>
+
+    </div>
+
+</section>
+
+<!-- SELL PAGE -->
+
+<section id="sell" class="page" style="display:none">
+
+    <div class="form-box">
+
+        <h2>Sell Your Product</h2>
+        <p>Enter Your Product Details</p>
+
+        <input type="text" id="productName"
+        placeholder="Product Name">
+
+        <input type="number" id="productPrice"
+        placeholder="Product Price">
+
+        <select id="productCategory">
+            <option value="">Select Category</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Watch">Watch</option>
+            <option value="Phone">Phone</option>
+            <option value="Bike">Bike</option>
+        </select>
+
+        <input type="url" id="productImage"
+        placeholder="Product Image URL">
+
+        <textarea id="productDescription"
+        placeholder="Product Description"></textarea>
+
+        <br><br>
+
+        <button onclick="addProduct()">Submit Product</button>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 EasyBuy | Buy Smart, Sell Easy</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
